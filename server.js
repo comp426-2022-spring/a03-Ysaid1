@@ -31,9 +31,8 @@ app.get('/app/', (req, res) => {
  });
  //endpoint for coin flips given a number
  app.get('/app/flips/:number', (req, res) => {
-    let raw = coin.coinFlips(req.params.number);
-    let summary = coin.countFlips(raw);
-    res.status(200).json({ "raw": raw, "summary": summary });
+    var flips = coinFlips(req.params.number)
+    res.status(200).json({"raw" : flips, "summary" : countFlips(flips)})
 });
 
 //endpoint for calling a flip
