@@ -6,7 +6,7 @@ import { coinFlip, countFlips, coinFlips, flipACoin} from "./modules/coin.mjs";
 const args = minimist(process.argv.slice(2));
 
 const app = express()
-const port = args.port || 5000;
+const port = args.port || process.env.PORT || 5000;
 
 // Start an app server
 const server = app.listen(port, () => {
